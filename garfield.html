@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Garfield Characters</title>
+</head>
+<body>
+    <h2>Select a Character</h2>
+
+    <select id="characterSelect">
+        <option value="">-- Select --</option>
+        <option value="Garfield">Garfield</option>
+        <option value="Odie">Odie</option>
+        <option value="Nermal">Nermal</option>
+        <option value="Pooky">Pooky</option>
+        <option value="Jon">Jon</option>
+    </select>
+
+    <br><br>
+
+    <img id="characterImage" src="" alt="" style="display:none; width:200px;">
+
+    <script>
+        const select = document.getElementById('characterSelect');
+        const img = document.getElementById('characterImage');
+
+        select.addEventListener('change', function() {
+            const selected = this.value;
+            if (selected) {
+                img.src = 'images/' + selected + '.jpg';
+                img.alt = selected;
+                img.style.display = 'block';
+            } else {
+                img.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
